@@ -1,0 +1,9 @@
+gnuplot << EOF
+  set style data lines
+  set terminal png size 1600,1000
+  set output 'res.png'
+  set yrange [-1.5:1.5]
+  plot [$2:$3] "$1" using 1:2 title "left", "$1" using 1:3 title "right"
+EOF
+
+display res.png
